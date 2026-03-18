@@ -65,6 +65,53 @@ return {
       --   end,
       -- })
       lspconfig.prismals.setup({})
+      lspconfig.intelephense.setup({
+        settings = {
+          intelephense = {
+            environment = {
+              phpVersion = "8.5",
+            },
+            stubs = {
+              "apache",
+              "bcmath",
+              "calendar",
+              "core",
+              "curl",
+              "date",
+              "dom",
+              "fileinfo",
+              "filter",
+              "gd",
+              "hash",
+              "json",
+              "mbstring",
+              "mysqli",
+              "openssl",
+              "pcre",
+              "pdo",
+              "pdo_mysql",
+              "posix",
+              "readline",
+              "reflection",
+              "session",
+              "simplexml",
+              "spl",
+              "standard",
+              "tokenizer",
+              "xml",
+              "xmlreader",
+              "xmlwriter",
+              "zip",
+              "zlib",
+              -- Symfony stubs:
+              "symfony",
+            },
+            files = {
+              maxSize = 5000000,
+            },
+          },
+        },
+      })
       lspconfig.cssls.setup({
         capabilities = capabilities,
       })

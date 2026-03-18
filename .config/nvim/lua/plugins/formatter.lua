@@ -63,7 +63,19 @@ return {
               }
             end,
           },
-
+          php = {
+            function()
+              return {
+                exe = "php-cs-fixer",
+                args = {
+                  "fix",
+                  "--rules=@PSR12", -- Or specify a config file: "--config=.php-cs-fixer.dist.php"
+                  "$FILENAME",
+                },
+                stdin = false,
+              }
+            end,
+          },
           markdown = {
             function()
               return {
